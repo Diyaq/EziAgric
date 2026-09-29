@@ -53,6 +53,30 @@ The corresponding `ErrorCode` enum values (in `backend/src/errors/errorCodes.ts`
 
 ---
 
+## Trade Creation Error Codes (Issue #350)
+
+These codes are emitted by `create_trade(...)` when the supplied loss-ratio
+basis points are invalid. The buyer and seller loss bps must always sum to
+`10_000` (100%), and each value must independently fall within `0..=10_000`.
+The code is embedded verbatim in the Soroban panic message, e.g.:
+
+```
+WasmVm error: INVALID_LOSS_RATIO
+```
+
+### Code Reference
+
+| Error Code            | HTTP Status | Description                                                                                  |
+|-----------------------|-------------|----------------------------------------------------------------------------------------------|
+| `INVALID_LOSS_RATIO`  | 400         | `buyer_loss_bps` or `seller_loss_bps` is outside `0..=10_000`, or the two do not sum to `10_000`. |
+
+### Backend Mapping
+
+Front ends should surface `INVALID_LOSS_RATIO` as a validation error on the
+trade-creation form, prompting the user to re-enter the loss split.
+
+---
+
 ## Source of Truth
 
 | Artifact                                                   | Purpose                                 |
