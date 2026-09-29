@@ -211,3 +211,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- handsoff-issue-352 -->
 - #352: [Contract] Seller-initiated cancellation before funding
+
+<!-- handsoff-issue-353 -->
+- #353: [Contract] Mutual-consent trade amendment (amount, deadline, loss ratio) before funding
