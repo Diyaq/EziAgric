@@ -214,3 +214,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- handsoff-issue-353 -->
 - #353: [Contract] Mutual-consent trade amendment (amount, deadline, loss ratio) before funding
+
+<!-- handsoff-issue-355 -->
+- #355: [Contract] Emit a structured event for platform-fee withdrawal
